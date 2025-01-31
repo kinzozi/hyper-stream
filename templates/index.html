@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torrent Player</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <div class="player-container">
+        <video id="videoPlayer"></video>
+        <div class="controls">
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <div class="buttons">
+                <button id="rewind" title="Rewind 10s">⪡</button>
+                <button id="playPause" title="Play/Pause">▶</button>
+                <button id="forward" title="Forward 10s">⪢</button>
+                <div class="volume-container">
+                    <button id="volume" title="Volume">🔊</button>
+                    <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1">
+                </div>
+                <div class="subtitle-container">
+                    <button id="subtitleToggle" title="Subtitles">📝</button>
+                    <input type="file" id="subtitleInput" accept=".srt,.vtt" style="display: none;">
+                </div>
+                <button id="fullscreen" title="Fullscreen">⛶</button>
+            </div>
+        </div>
+    </div>
+    <div class="file-input" onclick="document.getElementById('torrentInput').click()">
+        <input type="file" id="torrentInput" accept=".torrent,video/mp4">
+        <p>Click or drop torrent file / MP4 video here</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/webtorrent@latest/webtorrent.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/subtitle.js@latest/dist/subtitle.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/torrent.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/subtitles.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/controls.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/player.js') }}"></script>
+</body>
+</html>
