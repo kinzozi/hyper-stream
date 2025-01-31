@@ -2,7 +2,7 @@
 
 A minimal and elegant WebTorrent player for Linux, designed for simplicity and performance.
 
-![Hyper Stream Player](path_to_your_screenshot.png)
+![Hyper Stream - A Simple Torrent Player for Linux](HYPER STREAM_.png)
 
 ## Features
 
